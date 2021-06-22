@@ -8,7 +8,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/home',methods=['POST'])
+@app.route('/home', methods=['POST'])
 def home():
     name =request.form.get('name')
     content =request.form.get('content')
