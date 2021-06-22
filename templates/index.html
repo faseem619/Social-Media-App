@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='index.css')}}" />
+  </head>
+  <body>
+    <div class="container">
+      <form action="/home" method="POST">
+        <h3>Create Your Post</h3>
+        <input type="text" placeholder="Enter Your Name Here" name="name" />
+        <textarea
+          name="content"
+          placeholder="Type your Message"
+          class="content"
+        ></textarea>
+        <input type="submit" value="Submit" class="submit" />
+      </form>
+    </div>
+  </body>
+</html>
