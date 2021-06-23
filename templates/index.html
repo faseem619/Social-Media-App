@@ -9,16 +9,34 @@
   </head>
   <body>
     <div class="container">
-      <form action="/home" method="POST">
+      <form action="/home" method="POST" onsubmit="return handleClick()">
         <h3>Create Your Post</h3>
-        <input type="text" placeholder="Enter Your Name Here" name="name" />
+        <input
+          type="text"
+          placeholder="Enter Your Name Here"
+          name="name"
+          id="name"
+        />
         <textarea
           name="content"
           placeholder="Type your Message"
           class="content"
+          id="content"
         ></textarea>
-        <input type="submit" value="Submit" class="submit" />
+        <input type="submit" value="Submit" class="submit" id="submit" />
       </form>
     </div>
+    <script>
+      console.log("test1");
+      const name = document.getElementById("name");
+      const content = document.getElementById("content");
+      const submit = document.getElementById("submit");
+      function handleClick() {
+        console.log("test");
+        if (!(name.value && content.value)) return false;
+        console.log(" o error");
+        return true;
+      }
+    </script>
   </body>
 </html>
