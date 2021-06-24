@@ -24,15 +24,34 @@
               {{post[2]}} <br />
               {{post[3]}}
             </p>
-            <!-- <div class="post_icons">
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <img src="/static/resources/red-heart.png" alt="">
-              </a>
-            </div> -->
+            <div class="post_icons">
+              <img
+                src="/static/resources/red-heart.png"
+                alt=""
+                onclick="handleClick('{{post[3]}}')"
+              />
+            </div>
+            <p class="post_content" id="{{post[3]}}" data-clicked="true">0</p>
           </div>
         </div>
         {% endfor %}
       </div>
     </div>
+    <script>
+      function handleClick(id) {
+        num = document.getElementById(id).innerHTML;
+        if (
+          document.getElementById(id).getAttribute("data-clicked") === "true"
+        ) {
+          num++;
+          document.getElementById(id).innerHTML = num;
+          document.getElementById(id).setAttribute("data-clicked", "false");
+        } else {
+          num--;
+          document.getElementById(id).innerHTML = num;
+          document.getElementById(id).setAttribute("data-clicked", "true");
+        }
+      }
+    </script>
   </body>
 </html>
