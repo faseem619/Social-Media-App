@@ -1,17 +1,15 @@
-html{
+html {
   background-color: black;
 }
 
-.post_outer_container{
+.post_outer_container {
   background-color: rgb(0, 0, 0);
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
-.post_inner_container{
-  
+.post_inner_container {
   overflow: scroll;
   width: 45%;
   height: 80%;
@@ -21,44 +19,41 @@ html{
   align-items: center;
 }
 
-.post{
+.post {
   width: 90%;
   border: rgb(77, 73, 73) solid 1px;
   padding: 10px 10px;
   display: flex;
   flex-direction: row;
-  
 }
 
-.avatar{
+.avatar {
   height: 50px;
   border-radius: 30px;
 }
 
-/* .post_icons {
+.post_icons {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
-.post_icons img{
+.post_icons img {
   border-radius: 30px;
   transition: 0.5s;
   height: 20px;
 }
 
-.post_icons img:hover{
+.post_icons img:hover {
   transition: 0.5s;
   box-shadow: 0px 0px -2px -2px red;
-  scale:2;
+  scale: 2;
 }
 
-.post_icons img:active{
+.post_icons img:active {
   transition: 0.5s;
   box-shadow: 0px 0px 2px 2px red;
-  scale:2;
-} */
-
+  scale: 2;
+}
 
 .poster_name {
   padding-left: 20px;
@@ -72,21 +67,16 @@ html{
 }
 
 @media (min-width: 220px) and (max-width: 550px) {
-  
-  
-  .post_inner_container{
-    width: 80%; 
+  .post_inner_container {
+    width: 80%;
   }
 
-  .post_content{
+  .post_content {
     width: 50vw;
   }
-  
-  
 }
 @media (max-height: 560px) {
   .post_inner_container {
     width: 75%;
   }
-  
 }

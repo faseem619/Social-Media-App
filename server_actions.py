@@ -19,5 +19,14 @@ def getposts():
     con.close()
     return posts
 
+def updateLikes(num,id):
+    con = sqlite3.connect("mydatabase.db")
+    mycursor = con.cursor()
+    ## stuff goes here
+    mycursor.execute("UPDATE posts SET likes= ? WHERE post_date= ?;",(num,id))
+    con.commit()
+    con.close()
+
+
 
 

@@ -3,6 +3,10 @@ import sqlite3
 
 con = sqlite3.connect('mydatabase.db')
 mycursor = con.cursor()
-mycursor.execute("CREATE TABLE posts(id INTEGER PRIMARY KEY autoincrement, name text NOT NULL,content text NOT NULL,post_date text not null);")
+mycursor.execute("CREATE TABLE posts(id INTEGER PRIMARY KEY autoincrement, \
+    name text NOT NULL,\
+    content text NOT NULL, \
+    post_date text not null, \
+    likes INTEGER DEFAULT 0);")
 con.commit()
 con.close()

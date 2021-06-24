@@ -31,7 +31,9 @@
                 onclick="handleClick('{{post[3]}}')"
               />
             </div>
-            <p class="post_content" id="{{post[3]}}" data-clicked="true">0</p>
+            <p class="post_content" id="{{post[3]}}" data-clicked="true">
+              {{post[4]}}
+            </p>
           </div>
         </div>
         {% endfor %}
@@ -51,6 +53,16 @@
           document.getElementById(id).innerHTML = num;
           document.getElementById(id).setAttribute("data-clicked", "true");
         }
+        fetch(`${window.origin}/likes`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            num: num,
+            id: id,
+          }),
+        }).then((resp) => console.log(resp));
       }
     </script>
   </body>

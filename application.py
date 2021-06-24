@@ -1,6 +1,6 @@
-from server_actions import addpost
+
 from flask import Flask,render_template,request,jsonify
-from server_actions import addpost,getposts
+from server_actions import addpost,getposts,updateLikes
 from datetime import datetime
 app =Flask(__name__)
 
@@ -19,6 +19,16 @@ def home():
     addpost(name=name,content=content,date1=dt_string)
     posts =getposts()
     return render_template('home.html',posts=posts)
+
+@app.route('/likes',methods=['POST'])
+def likes():
+    resp = request.get_json()
+    num=resp['num']
+    id= resp['id']
+    print(num)
+    print(id)
+    updateLikes(num,id)
+    return 'Got it'
 
 if __name__ =="__main__":
     app.run(debug=True)
