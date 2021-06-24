@@ -1,11 +1,12 @@
+from datetime import date
 import sqlite3
 
 
 
-def addpost(name,content):
+def addpost(name,content,date1):
     con = sqlite3.connect("mydatabase.db")
     mycursor = con.cursor()
-    mycursor.execute("INSERT INTO posts(name,content) VALUES (?,?);",(name ,content))
+    mycursor.execute("INSERT INTO posts(name,content,post_date) VALUES (?,?,?);",(name ,content,date1))
     con.commit()
     con.close()
 
