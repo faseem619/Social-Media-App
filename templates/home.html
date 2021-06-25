@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{url_for('static',filename='home.css')}}" />
   </head>
   <body>
+    {% block title%} {% endblock%}
     <div class="post_outer_container">
       <div class="post_inner_container">
         {% for post in posts%}

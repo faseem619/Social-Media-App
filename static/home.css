@@ -32,21 +32,19 @@ html {
   border-radius: 30px;
 }
 
-
-.post_writing{
+.post_writing {
   width: 90%;
 }
-
 
 .post_icons {
   color: grey;
   display: flex;
-  
-  justify-content:space-evenly;
-  align-items:center;
+
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.post_icons:hover{
+.post_icons:hover {
   cursor: pointer;
 }
 
@@ -56,30 +54,25 @@ html {
   color: rgb(241, 237, 236);
 }
 
-
 .post_icons div {
- 
   transition: 0.5s;
   height: 20px;
 }
 
-
-.likes{
+.likes {
   display: flex;
-  
 }
-.like_no { 
+.like_no {
   padding-left: 3px;
-  
 }
 
-.poster_head{
+.poster_head {
   color: white;
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
 }
 
-.date{
+.date {
   color: grey;
 }
 
@@ -90,34 +83,30 @@ html {
   color: rgb(193, 240, 240);
 }
 
-
-
-
-
 .likes:hover {
   transition: 0.5s;
   color: red;
-  text-shadow:0px 0px 10px rgb(255, 0, 0),0px 0px 10px rgb(255, 0, 0),0px 0px 10px rgb(255, 0, 0);
-  
+  text-shadow: 0px 0px 10px rgb(255, 0, 0), 0px 0px 10px rgb(255, 0, 0),
+    0px 0px 10px rgb(255, 0, 0);
 }
 .glow_green:hover {
   transition: 0.5s;
   color: rgb(45, 201, 25);
-  text-shadow:0px 0px 10px rgb(45, 201, 25),0px 0px 10px rgb(45, 201, 25),0px 0px 10px rgb(45, 201, 25);
-  
+  text-shadow: 0px 0px 10px rgb(45, 201, 25), 0px 0px 10px rgb(45, 201, 25),
+    0px 0px 10px rgb(45, 201, 25);
 }
 .glow_blue:hover {
   transition: 0.5s;
   color: rgb(24, 151, 224);
-  text-shadow:0px 0px 10px rgb(24, 151, 224),0px 0px 10px rgb(24, 151, 224),0px 0px 10px rgb(24, 151, 224);
-  
+  text-shadow: 0px 0px 10px rgb(24, 151, 224), 0px 0px 10px rgb(24, 151, 224),
+    0px 0px 10px rgb(24, 151, 224);
 }
 
 .text_glow {
   color: red;
   transition: 0.5s;
-  text-shadow:0px 0px 10px rgb(255, 0, 0),0px 0px 10px rgb(255, 0, 0),0px 0px 10px rgb(255, 0, 0);
-  
+  text-shadow: 0px 0px 10px rgb(255, 0, 0), 0px 0px 10px rgb(255, 0, 0),
+    0px 0px 10px rgb(255, 0, 0);
 }
 
 @media (min-width: 360px) and (max-width: 720px) {
@@ -129,7 +118,14 @@ html {
     width: 90%;
   }
 
-  .post_writing{
+  .post_writing {
     width: 90%;
   }
+}
+h1 {
+  color: #a5e9f0;
+  text-align: center;
+  background-color: #d59227;
+  font-size: 5rem;
+  margin-bottom: 5%;
 }
