@@ -26,7 +26,15 @@ def updateLikes(num,id):
     mycursor.execute("UPDATE posts SET likes= ? WHERE post_date= ?;",(num,id))
     con.commit()
     con.close()
-
+def getprofile(name):
+    con = sqlite3.connect("mydatabase.db")
+    mycursor = con.cursor()
+    ## stuff goes here
+    mycursor.execute(" SELECT * FROM posts WHERE name = ?",(name,))
+    posts =mycursor.fetchall()
+    con.commit()
+    con.close()
+    return posts
 
 
 
