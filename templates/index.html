@@ -24,6 +24,7 @@
           id="content"
         ></textarea>
         <input type="submit" value="Submit" class="submit" id="submit" />
+        <div class="comment" id ="comment"></div>
       </form>
     </div>
     <script>
@@ -33,6 +34,12 @@
       const submit = document.getElementById("submit");
       function handleClick() {
         console.log("test");
+        if(!name.value){
+          document.getElementById('comment').innerHTML="Please enter your name!";
+        }
+        else if(!content.value){
+          document.getElementById('comment').innerHTML = "Don't be shy, share something" ;
+        }
         if (!(name.value && content.value)) return false;
         console.log(" o error");
         return true;

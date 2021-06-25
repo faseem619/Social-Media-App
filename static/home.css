@@ -11,7 +11,7 @@ html {
 }
 .post_inner_container {
   overflow: scroll;
-  width: 45%;
+  width: 700px;
   height: 80%;
   display: flex;
   flex-direction: column;
@@ -20,7 +20,7 @@ html {
 }
 
 .post {
-  width: 90%;
+  width: 660px;
   border: rgb(77, 73, 73) solid 1px;
   padding: 10px 10px;
   display: flex;
@@ -32,51 +32,104 @@ html {
   border-radius: 30px;
 }
 
+
+.post_writing{
+  width: 90%;
+}
+
+
 .post_icons {
+  color: grey;
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.post_icons img {
-  border-radius: 30px;
-  transition: 0.5s;
-  height: 20px;
+  
+  justify-content:space-evenly;
+  align-items:center;
 }
 
-.post_icons img:hover {
-  transition: 0.5s;
-  box-shadow: 0px 0px -2px -2px red;
-  scale: 2;
+.post_icons:hover{
+  cursor: pointer;
 }
 
-.post_icons img:active {
-  transition: 0.5s;
-  box-shadow: 0px 0px 2px 2px red;
-  scale: 2;
-}
-
-.poster_name {
-  padding-left: 20px;
-  color: rgb(193, 240, 240);
-}
 .post_content {
   word-wrap: break-word;
-  width: 30vw;
   padding-left: 20px;
   color: rgb(241, 237, 236);
 }
 
-@media (min-width: 220px) and (max-width: 550px) {
+
+.post_icons div {
+ 
+  transition: 0.5s;
+  height: 20px;
+}
+
+
+.likes{
+  display: flex;
+  
+}
+.like_no { 
+  padding-left: 3px;
+  
+}
+
+.poster_head{
+  color: white;
+  display: flex;
+  justify-content:space-between;
+}
+
+.date{
+  color: grey;
+}
+
+.poster_name {
+  font-size: 20px;
+  font-weight: bolder;
+  padding-left: 20px;
+  color: rgb(193, 240, 240);
+}
+
+
+
+
+
+.likes:hover {
+  transition: 0.5s;
+  color: red;
+  text-shadow:0px 0px 10px rgb(255, 0, 0),0px 0px 10px rgb(255, 0, 0),0px 0px 10px rgb(255, 0, 0);
+  
+}
+.glow_green:hover {
+  transition: 0.5s;
+  color: rgb(45, 201, 25);
+  text-shadow:0px 0px 10px rgb(45, 201, 25),0px 0px 10px rgb(45, 201, 25),0px 0px 10px rgb(45, 201, 25);
+  
+}
+.glow_blue:hover {
+  transition: 0.5s;
+  color: rgb(24, 151, 224);
+  text-shadow:0px 0px 10px rgb(24, 151, 224),0px 0px 10px rgb(24, 151, 224),0px 0px 10px rgb(24, 151, 224);
+  
+}
+
+.text_glow {
+  color: red;
+  transition: 0.5s;
+  text-shadow:0px 0px 10px rgb(255, 0, 0),0px 0px 10px rgb(255, 0, 0),0px 0px 10px rgb(255, 0, 0);
+  
+}
+
+@media (min-width: 360px) and (max-width: 720px) {
   .post_inner_container {
     width: 80%;
   }
 
-  .post_content {
-    width: 50vw;
+  .post {
+    width: 90%;
   }
-}
-@media (max-height: 560px) {
-  .post_inner_container {
-    width: 75%;
+
+  .post_writing{
+    width: 90%;
   }
 }

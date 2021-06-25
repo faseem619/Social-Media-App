@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="{{url_for('static',filename='home.css')}}" />
   </head>
   <body>
@@ -17,29 +18,35 @@
             alt="avatar"
             class="avatar"
           />
-          <div>
-            <div class="poster_name">{{post[1]}}</div>
+          <div class="post_writing">
+            <div class="poster_head">
+              <div class="poster_name">{{post[1]}}</div>
+              <div class="date">{{post[3]}}</div>
 
+            </div>
             <p class="post_content">
-              {{post[2]}} <br />
-              {{post[3]}}
+              {{post[2]}} 
+              
             </p>
             <div class="post_icons">
-              <img
-                src="/static/resources/red-heart.png"
-                alt=""
-                onclick="handleClick('{{post[3]}}')"
-              />
+              <div class="material-icons glow_blue " >share</div>
+              <div class="likes" id="likes{{post[3]}}">
+                <div class="material-icons" onclick="handleClick('{{post[3]}}')">favorite_border</div>
+                <div class="like_no" id="{{post[3]}}" data-clicked="true">
+                  {{post[4]}}
+                </div>
+              </div>
+              <div class="material-icons glow_green " >question_answer</div>
+             
             </div>
-            <p class="post_content" id="{{post[3]}}" data-clicked="true">
-              {{post[4]}}
-            </p>
           </div>
         </div>
         {% endfor %}
       </div>
     </div>
+    
     <script>
+  
       function handleClick(id) {
         num = document.getElementById(id).innerHTML;
         if (
@@ -47,9 +54,11 @@
         ) {
           num++;
           document.getElementById(id).innerHTML = num;
+          document.getElementById('likes'+id).classList.add('text_glow');
           document.getElementById(id).setAttribute("data-clicked", "false");
         } else {
           num--;
+          document.getElementById('likes'+id).classList.remove('text_glow');
           document.getElementById(id).innerHTML = num;
           document.getElementById(id).setAttribute("data-clicked", "true");
         }
