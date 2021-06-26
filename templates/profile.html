@@ -1,3 +1,19 @@
 {% extends "home.html"%} {% block title%}
-<h1>{{name}}</h1>
+<div class="other_profile">
+  <h1>{{name}}</h1>
+  <div class="material-icons">
+    <a href="/home"> <span class="material-icons-outlined"> home </span></a>
+
+    <span class="material-icons-outlined"> favorite </span>
+    <span class="material-icons-outlined"> search </span>
+
+    <a href="/home/profiles/{{name}}">
+      <span class="material-icons-outlined"> account_circle </span>
+    </a>
+    <a href="/"><span class="material-icons-outlined"> logout </span></a>
+
+    <span class="material-icons-outlined menu_icon"> menu </span>
+  </div>
+</div>
+
 {% endblock%}

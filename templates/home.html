@@ -12,7 +12,25 @@
     <link rel="stylesheet" href="{{url_for('static',filename='home.css')}}" />
   </head>
   <body>
-    {% block title%} {% endblock%}
+    {% block title%}
+    <div class="other_profile">
+      <h1>Social Media App</h1>
+      <div class="material-icons">
+        <a href="/home"> <span class="material-icons-outlined"> home </span></a>
+
+        <span class="material-icons-outlined"> favorite </span>
+        <span class="material-icons-outlined"> search </span>
+        {% if name%}
+        <a href="/home/profiles/{{name}}">
+          <span class="material-icons-outlined"> account_circle </span>
+        </a>
+        {% endif%}
+        <a href="/"><span class="material-icons-outlined"> logout </span></a>
+
+        <span class="material-icons-outlined menu_icon"> menu </span>
+      </div>
+    </div>
+    {% endblock%}
     <div class="post_outer_container">
       <div class="post_inner_container">
         {% for post in posts%}
@@ -50,6 +68,11 @@
         {% endfor %}
       </div>
     </div>
+    <div class="material-icons back-to-top">
+      <span class="material-icons-outlined" onclick="toTop()">
+        arrow_circle_up
+      </span>
+    </div>
 
     <script>
       function handleClick(id) {
@@ -83,6 +106,17 @@
       function profilePage(name) {
         location.href = `${window.origin}/home/profiles/${name}`;
       }
+      function toTop() {
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
+      }
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 280) {
+          button = document.querySelector(".back-to-top");
+          button.style.display = "block";
+        } else {
+          button.style.display = "none";
+        }
+      });
     </script>
   </body>
 </html>

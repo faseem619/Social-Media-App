@@ -21,7 +21,7 @@ def home():
     dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
     addpost(name=name,content=content,date1=dt_string)
     posts =getposts()
-    return render_template('home.html',posts=posts)
+    return render_template('home.html',posts=posts,name=name)
 
 @app.route('/likes',methods=['POST'])
 def likes():
