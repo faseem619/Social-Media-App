@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="{{url_for('static',filename='index.css')}}" />
   </head>
   <body>
+    <div class="navbar">
+      <div class="heading nav_heading"><h1>Social Media App</h1></div>
+      <div class="home_link nav_heading">
+        <h2 onclick="rerouteHome()">Home</h2>
+      </div>
+    </div>
     <div class="container">
       <form action="/home" method="POST" onsubmit="return handleClick()">
         <h3>Create Your Post</h3>
@@ -24,25 +30,29 @@
           id="content"
         ></textarea>
         <input type="submit" value="Submit" class="submit" id="submit" />
-        <div class="comment" id ="comment"></div>
+        <div class="comment" id="comment"></div>
       </form>
     </div>
     <script>
-      console.log("test1");
       const name = document.getElementById("name");
       const content = document.getElementById("content");
       const submit = document.getElementById("submit");
       function handleClick() {
-        console.log("test");
-        if(!name.value){
-          document.getElementById('comment').innerHTML="Please enter your name!";
-        }
-        else if(!content.value){
-          document.getElementById('comment').innerHTML = "Don't be shy, share something" ;
+        if (!name.value) {
+          document.getElementById("comment").innerHTML =
+            "Please enter your name!";
+        } else if (!content.value) {
+          document.getElementById("comment").innerHTML =
+            "Don't be shy, share something";
         }
         if (!(name.value && content.value)) return false;
-        console.log(" o error");
+
         return true;
+      }
+    </script>
+    <script>
+      function rerouteHome() {
+        location.href = `${window.origin}/home`;
       }
     </script>
   </body>
