@@ -9,8 +9,12 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/home', methods=['POST'])
+@app.route('/home', methods=['GET','POST'])
 def home():
+    if request.method== 'GET':
+        posts =getposts()
+        return render_template('home.html',posts=posts)
+
     name =request.form.get('name')
     content =request.form.get('content')
     now = datetime.now()
@@ -28,9 +32,10 @@ def likes():
     print(id)
     updateLikes(num,id)
     return 'Got it'
+
 @app.route('/home/profiles/<variable>')
 def individual(variable):
-    print(variable)
+    
     posts = getprofile(variable)
     return render_template('profile.html',name=variable,posts= posts)
 
