@@ -179,3 +179,47 @@ a:hover {
   bottom: 2%;
   z-index: 2;
 }
+
+@media (min-width: 360px) and (max-width: 812px) {
+  .post_inner_container {
+    width: 80%;
+  }
+
+  .other_profile{
+    height: 100px;
+  }
+
+  .other_profile > h1{
+    font-size: 40px;
+  }
+
+
+  .non_menu_icons{
+    transition: 1s;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 75px;
+    
+    right: -50px;
+  }
+  .menu_active{
+    transition: 1s;
+    background-color: black;
+    /* border: 1px solid white; */
+    border-radius: 20px;
+    right: 37px;
+    top: 75px;
+  }
+  .menu_icon{
+    display: block;
+  }
+
+  .post {
+    width: 90%;
+  }
+
+  .post_writing {
+    width: 90%;
+  }
+}
