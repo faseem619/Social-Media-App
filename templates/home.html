@@ -25,6 +25,8 @@
         <a href="/home/profiles/{{name}}">
           <span class="material-icons-outlined"> account_circle </span>
         </a>
+        {% else %}
+        <span id="conditional_icon"></span>
         {% endif%}
         <a href="/"><span class="material-icons-outlined"> logout </span></a>
 
@@ -105,7 +107,9 @@
     </script>
     <script>
       function profilePage(name) {
-        location.href = `${window.origin}/home/profiles/${name}`;
+
+          location.href = `${window.origin}/home/profiles/${name}`;
+    
       }
       function toTop() {
         document.body.scrollTop = document.documentElement.scrollTop = 0;
@@ -118,6 +122,32 @@
           button.style.display = "none";
         }
       });
+    </script>
+    <script>
+      window.onload = () => {
+        if (document.cookie.length != 0) {
+          d =document.getElementById("conditional_icon");
+          let user = getCookie("username");
+          if(d){
+          d.innerHTML ='<a href="/home/profiles/'+user+'"><span class="material-icons-outlined"> account_circle </span></a>';
+          }
+        }
+      };
+
+      function getCookie(cname) {
+        let name = cname + "=";
+        let ca = document.cookie.split(";");
+        for (let i = 0; i < ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) == " ") {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
+      }
     </script>
   </body>
 </html>
