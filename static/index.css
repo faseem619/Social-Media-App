@@ -55,13 +55,12 @@ form > h3 {
 }
 .container {
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
   flex: auto;
   /* background-color: rgba(95, 152, 165, 0.795); */
   background-color: #f1f6f9;
 }
-
 
 .navbar {
   background-color: #14274e;
@@ -105,36 +104,53 @@ body {
 }
 
 @media (max-width: 550px) {
-  .container{
+  .container {
     flex-direction: column-reverse;
   }
-  .description{
-    width: 80%;
-    margin: 5% 5%;
-    padding: 5% 5%;
+  .description {
+    width: 95%;
+    margin: 5% 1%;
+    margin-top: 0%;
+    padding: 5% 1%;
+    padding-top: 0%;
   }
-  h1{
+  /* h1 {
     font-size: 60px;
+  } */
+  .navbar > .heading {
+    font-size: 125%;
   }
-  form{
+  .navbar > .home_link {
+    font-size: 90%;
+  }
+  .navbar {
+    padding: 1% 5%;
+  }
+  .description > h2 {
+    font-size: 2.5rem;
+  }
+  .description > p {
+    font-size: 1.5rem;
+  }
+  form {
     width: 80%;
     margin: 10% 11%;
+    margin-bottom: 1%;
     padding: 10% 5%;
   }
 }
 
 @media (min-width: 550px) and (max-width: 1150px) {
-  .container{
+  .container {
     flex-direction: column-reverse;
   }
-  .description{
+  .description {
     width: 80%;
     margin: 5% 5%;
     padding: 5% 5%;
   }
-  form{
+  form {
     width: 80%;
     margin: 5% 11%;
   }
 }
-

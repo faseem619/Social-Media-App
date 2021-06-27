@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,6 +10,7 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
     <link rel="stylesheet" href="{{url_for('static',filename='home.css')}}" />
+    <script src="{{url_for('static',filename='home.js')}}"></script>
   </head>
   <body>
     {% block title%}
@@ -18,11 +18,19 @@
       <h1>Social Media App</h1>
       <div class="material-icons">
         <div>
-  
-          <span class="material-icons-outlined menu_icon" id="menu_icon" onclick="handleMenu()" clicked = "true"> menu </span>
+          <span
+            class="material-icons-outlined menu_icon"
+            id="menu_icon"
+            onclick="handleMenu()"
+            clicked="true"
+          >
+            menu
+          </span>
         </div>
         <div class="non_menu_icons" id="non_menu_icons">
-          <a href="/home"> <span class="material-icons-outlined"> home </span></a>
+          <a href="/home">
+            <span class="material-icons-outlined"> home </span></a
+          >
 
           <span class="material-icons-outlined"> favorite </span>
           <span class="material-icons-outlined"> search </span>
@@ -36,11 +44,16 @@
           <a href="/"><span class="material-icons-outlined"> logout </span></a>
         </div>
       </div>
-      
     </div>
     {% endblock%}
     <div class="post_outer_container">
       <div class="post_inner_container">
+        <div class="sorting">
+          <h3>Sort by:</h3>
+          <h3 class="order_links" onclick="orderPosts(this)">New</h3>
+          <h3 class="order_links" onclick="orderPosts(this)">Old</h3>
+          <h3 class="order_links" onclick="orderPosts(this)">Popular</h3>
+        </div>
         {% for post in posts%}
         <div class="post">
           <img
@@ -81,94 +94,5 @@
         arrow_circle_up
       </span>
     </div>
-
-    <script>
-      function handleMenu(){
-        d = document.getElementById("menu_icon");
-        s = document.getElementById("non_menu_icons");
-        if(d.getAttribute("clicked")== "true"){
-        
-          s.classList.add("menu_active");
-          d.setAttribute("clicked","false") ;
-        }
-        else{
-          
-          d.setAttribute("clicked","true");
-          s.classList.remove("menu_active");
-
-        }
-      }
-
-      function handleClick(id) {
-        num = document.getElementById(id).innerHTML;
-        if (
-          document.getElementById(id).getAttribute("data-clicked") === "true"
-        ) {
-          num++;
-          document.getElementById(id).innerHTML = num;
-          document.getElementById("likes" + id).classList.add("text_glow");
-          document.getElementById(id).setAttribute("data-clicked", "false");
-        } else {
-          num--;
-          document.getElementById("likes" + id).classList.remove("text_glow");
-          document.getElementById(id).innerHTML = num;
-          document.getElementById(id).setAttribute("data-clicked", "true");
-        }
-        fetch(`${window.origin}/likes`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            num: num,
-            id: id,
-          }),
-        }).then((resp) => console.log(resp));
-      }
-    </script>
-    <script>
-      function profilePage(name) {
-
-          location.href = `${window.origin}/home/profiles/${name}`;
-    
-      }
-      function toTop() {
-        document.body.scrollTop = document.documentElement.scrollTop = 0;
-      }
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 280) {
-          button = document.querySelector(".back-to-top");
-          button.style.display = "block";
-        } else {
-          button.style.display = "none";
-        }
-      });
-    </script>
-    <script>
-      window.onload = () => {
-        if (document.cookie.length != 0) {
-          d =document.getElementById("conditional_icon");
-          let user = getCookie("username");
-          if(d){
-          d.innerHTML ='<a href="/home/profiles/'+user+'"><span class="material-icons-outlined"> account_circle </span></a>';
-          }
-        }
-      };
-
-      function getCookie(cname) {
-        let name = cname + "=";
-        let ca = document.cookie.split(";");
-        for (let i = 0; i < ca.length; i++) {
-          let c = ca[i];
-          while (c.charAt(0) == " ") {
-            c = c.substring(1);
-          }
-          if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-          }
-        }
-        return "";
-      }
-    </script>
   </body>
 </html>
