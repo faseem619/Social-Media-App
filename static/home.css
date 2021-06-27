@@ -115,19 +115,6 @@ html {
     0px 0px 10px rgb(255, 0, 0);
 }
 
-@media (min-width: 360px) and (max-width: 720px) {
-  .post_inner_container {
-    width: 80%;
-  }
-
-  .post {
-    width: 90%;
-  }
-
-  .post_writing {
-    width: 90%;
-  }
-}
 .other_profile {
   color: #dbedf3;
   display: flex;
@@ -182,44 +169,61 @@ a:hover {
 
 @media (min-width: 360px) and (max-width: 812px) {
   .post_inner_container {
-    width: 80%;
+    width: 95%;
   }
 
-  .other_profile{
+  .other_profile {
     height: 100px;
   }
 
-  .other_profile > h1{
+  .other_profile > h1 {
     font-size: 40px;
   }
 
-
-  .non_menu_icons{
+  .non_menu_icons {
     transition: 1s;
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 75px;
-    
+    top: 115px;
+
     right: -50px;
   }
-  .menu_active{
+  .menu_active {
     transition: 1s;
     background-color: black;
     /* border: 1px solid white; */
     border-radius: 20px;
     right: 37px;
-    top: 75px;
+    z-index: 2;
   }
-  .menu_icon{
+  .menu_icon {
     display: block;
+    transition: all 0.3s linear;
+  }
+  .menu_icon:hover {
+    transform: rotate(90deg);
   }
 
   .post {
-    width: 90%;
+    width: 100%;
   }
 
   .post_writing {
-    width: 90%;
+    width: 100%;
   }
+}
+.sorting {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  color: #00818a;
+  padding-bottom: 9px;
+}
+.sorting > h3 {
+  display: block;
+}
+.order_links:hover {
+  cursor: pointer;
+  color: #05b8c5;
 }
