@@ -26,6 +26,7 @@ def updateLikes(num,id):
     mycursor.execute("UPDATE posts SET likes= ? WHERE post_date= ?;",(num,id))
     con.commit()
     con.close()
+
 def getprofile(name):
     con = sqlite3.connect("mydatabase.db")
     mycursor = con.cursor()
@@ -36,5 +37,49 @@ def getprofile(name):
     con.close()
     return posts
 
+def getposts_inorder(type):
+    con = sqlite3.connect("mydatabase.db")
+    mycursor = con.cursor()
+    if type == 'New':
+        mycursor.execute("select * from posts order by post_date desc")
+        posts =mycursor.fetchall()
+        con.commit()
+        con.close()
+        return posts
+    if type == 'Old':
+        mycursor.execute("select * from posts order by post_date asc")
+        posts =mycursor.fetchall()
+        con.commit()
+        con.close()
+        return posts
+    if type == 'Popular':
+        mycursor.execute("select * from posts order by likes desc")
+        posts =mycursor.fetchall()
+        con.commit()
+        con.close()
+        return posts
+    
 
+    
 
+def getprofile_inorder(type,name):
+    con = sqlite3.connect("mydatabase.db")
+    mycursor = con.cursor()
+    if type == 'New':
+        mycursor.execute("select * from posts WHERE name = ?  order by post_date desc",(name,))
+        posts =mycursor.fetchall()
+        con.commit()
+        con.close()
+        return posts
+    if type == 'Old':
+        mycursor.execute("select * from posts WHERE name = ? order by post_date asc",(name,))
+        posts =mycursor.fetchall()
+        con.commit()
+        con.close()
+        return posts
+    if type == 'Popular':
+        mycursor.execute("select * from posts WHERE name = ? order by likes desc",(name,))
+        posts =mycursor.fetchall()
+        con.commit()
+        con.close()
+        return posts
