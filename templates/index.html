@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,6 +15,14 @@
       </div>
     </div>
     <div class="container">
+      <div class="description">
+        <h2>Welcome to our app!!</h2>
+        <p>
+          You can get started by entering your name and your content in the
+          given form . If you would like to browse as a guest click on the home
+          button
+        </p>
+      </div>
       <form action="/home" method="POST" onsubmit="return handleClick()">
         <h3>Create Your Post</h3>
         <input
@@ -47,7 +54,7 @@
             "Don't be shy, share something";
         }
         if (!(name.value && content.value)) return false;
-        setCookie("username",name.value,1);
+        setCookie("username", name.value, 1);
         return true;
       }
     </script>
@@ -56,40 +63,37 @@
         location.href = `${window.origin}/home`;
       }
     </script>
-          <script>
+    <script>
+      window.onload = () => {
+        if (document.cookie.length != 0) {
+          let user = getCookie("username");
+          document.getElementById("name").value = user;
+        }
+      };
 
-            window.onload= ()=>{
-              if (document.cookie.length != 0) {
-                
-                let user = getCookie("username");
-                document.getElementById("name").value=user;
-              } 
-            } 
-    
-            function getCookie(cname) {
-              let name = cname + "=";
-              let ca = document.cookie.split(';');
-              for(let i = 0; i < ca.length; i++) {
-                let c = ca[i];
-                while (c.charAt(0) == ' ') {
-                  c = c.substring(1);
-                }
-                if (c.indexOf(name) == 0) {
-                  return c.substring(name.length, c.length);
-                }
-              }
-              return "";
-            }
-    
-            function setCookie(cname, cvalue, exdays) {
-              if(cvalue){
-                const d = new Date();
-                d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-                let expires = "expires="+d.toUTCString();
-                document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-      
-              }
-            }
-          </script>
+      function getCookie(cname) {
+        let name = cname + "=";
+        let ca = document.cookie.split(";");
+        for (let i = 0; i < ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) == " ") {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
+      }
+
+      function setCookie(cname, cvalue, exdays) {
+        if (cvalue) {
+          const d = new Date();
+          d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+          let expires = "expires=" + d.toUTCString();
+          document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+      }
+    </script>
   </body>
 </html>
