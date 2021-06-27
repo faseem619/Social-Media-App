@@ -17,21 +17,26 @@
     <div class="other_profile">
       <h1>Social Media App</h1>
       <div class="material-icons">
-        <a href="/home"> <span class="material-icons-outlined"> home </span></a>
+        <div>
+  
+          <span class="material-icons-outlined menu_icon" id="menu_icon" onclick="handleMenu()" clicked = "true"> menu </span>
+        </div>
+        <div class="non_menu_icons" id="non_menu_icons">
+          <a href="/home"> <span class="material-icons-outlined"> home </span></a>
 
-        <span class="material-icons-outlined"> favorite </span>
-        <span class="material-icons-outlined"> search </span>
-        {% if name%}
-        <a href="/home/profiles/{{name}}">
-          <span class="material-icons-outlined"> account_circle </span>
-        </a>
-        {% else %}
-        <span id="conditional_icon"></span>
-        {% endif%}
-        <a href="/"><span class="material-icons-outlined"> logout </span></a>
-
-        <span class="material-icons-outlined menu_icon"> menu </span>
+          <span class="material-icons-outlined"> favorite </span>
+          <span class="material-icons-outlined"> search </span>
+          {% if name%}
+          <a href="/home/profiles/{{name}}">
+            <span class="material-icons-outlined"> account_circle </span>
+          </a>
+          {% else %}
+          <span id="conditional_icon"></span>
+          {% endif%}
+          <a href="/"><span class="material-icons-outlined"> logout </span></a>
+        </div>
       </div>
+      
     </div>
     {% endblock%}
     <div class="post_outer_container">
@@ -78,6 +83,22 @@
     </div>
 
     <script>
+      function handleMenu(){
+        d = document.getElementById("menu_icon");
+        s = document.getElementById("non_menu_icons");
+        if(d.getAttribute("clicked")== "true"){
+        
+          s.classList.add("menu_active");
+          d.setAttribute("clicked","false") ;
+        }
+        else{
+          
+          d.setAttribute("clicked","true");
+          s.classList.remove("menu_active");
+
+        }
+      }
+
       function handleClick(id) {
         num = document.getElementById(id).innerHTML;
         if (
