@@ -13,7 +13,7 @@ def addpost(name,content,date1):
 def getposts():
     con = sqlite3.connect("mydatabase.db")
     mycursor = con.cursor()
-    mycursor.execute("select * from posts")
+    mycursor.execute("select * from posts order by post_date desc")
     posts =mycursor.fetchall()
     con.commit()
     con.close()
@@ -31,7 +31,7 @@ def getprofile(name):
     con = sqlite3.connect("mydatabase.db")
     mycursor = con.cursor()
     ## stuff goes here
-    mycursor.execute(" SELECT * FROM posts WHERE name = ?",(name,))
+    mycursor.execute(" SELECT * FROM posts WHERE name = ? order by post_date desc",(name,))
     posts =mycursor.fetchall()
     con.commit()
     con.close()

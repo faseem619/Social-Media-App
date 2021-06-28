@@ -2,6 +2,11 @@ html {
   background-color: #111;
   scroll-behavior: smooth;
 }
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
 .post_outer_container {
   background-color: #111;
