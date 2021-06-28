@@ -2,9 +2,11 @@ function handleMenu() {
   d = document.getElementById("menu_icon");
   s = document.getElementById("non_menu_icons");
   if (d.getAttribute("clicked") == "true") {
+    d.style.transform = "rotate(90deg)";
     s.classList.add("menu_active");
     d.setAttribute("clicked", "false");
   } else {
+    d.style.transform = "rotate(0deg)";
     d.setAttribute("clicked", "true");
     s.classList.remove("menu_active");
   }
