@@ -2,14 +2,16 @@ const name = document.getElementById("name");
 const content = document.getElementById("content");
 const submit = document.getElementById("submit");
 function handleClick() {
-  if (!name.value) {
+  const name1 = document.getElementById("name");
+  const content = document.getElementById("content");
+  if (!name1.value) {
     document.getElementById("comment").innerHTML = "Please enter your name!";
   } else if (!content.value) {
     document.getElementById("comment").innerHTML =
       "Don't be shy, share something";
   }
-  if (!(name.value && content.value)) return false;
-  setCookie("username", name.value, 1);
+  if (!(name1.value && content.value)) return false;
+  setCookie("username", name1.value, 1);
   return true;
 }
 
