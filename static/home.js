@@ -42,8 +42,8 @@ function toTop() {
   document.body.scrollTop = document.documentElement.scrollTop = 0;
 }
 window.addEventListener("scroll", () => {
+  button = document.querySelector(".back-to-top");
   if (window.scrollY > 280) {
-    button = document.querySelector(".back-to-top");
     button.style.display = "block";
   } else {
     button.style.display = "none";
