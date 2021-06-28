@@ -8,7 +8,18 @@ function handleMenu() {
   } else {
     d.style.transform = "rotate(0deg)";
     d.setAttribute("clicked", "true");
-    s.classList.remove("menu_active");
+    s.style.animation = "ani2 1s ease-in-out";
+    setTimeout(()=>{
+      s.classList.remove("menu_active");
+      
+    },1000)
+    setTimeout(()=>{
+     
+      s.style.removeProperty("animation");
+      
+    },1000)
+    
+    
   }
 }
 

@@ -172,6 +172,8 @@ a:hover {
   z-index: 2;
 }
 
+
+
 @media (min-width: 360px) and (max-width: 812px) {
   .post_inner_container {
     width: 95%;
@@ -187,20 +189,40 @@ a:hover {
 
   .non_menu_icons {
     transition: 1s;
+
+    display: none;
+  }
+  
+  .menu_active {
+    transition: 1s;
+
     display: flex;
     flex-direction: column;
     position: absolute;
     top: 115px;
-
-    right: -50px;
-  }
-  .menu_active {
-    transition: 1s;
+    right:-50px;
+    animation: ani 1s ease-in-out forwards;
     background-color: black;
     /* border: 1px solid white; */
     border-radius: 20px;
-    right: 37px;
     z-index: 2;
+  }
+
+  @keyframes ani{
+    0% {
+      right: -50px;
+    }
+    100%{
+      right: 30px;
+    }
+  }
+  @keyframes ani2{
+    0% {
+      right: 30px;
+    }
+    100%{
+      right: -50px;
+    }
   }
   .menu_icon {
     display: block;
