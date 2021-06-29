@@ -105,6 +105,7 @@ window.onload = () => {
       } ago`;
     else if (second != postSecond)
       element.innerHTML = `${second - postSecond} s  ago`;
+    element.style.display = "block";
   });
 };
 
