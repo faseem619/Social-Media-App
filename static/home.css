@@ -174,7 +174,7 @@ a:hover {
 
 
 
-@media (min-width: 360px) and (max-width: 812px) {
+@media (max-width: 812px) {
   .post_inner_container {
     width: 95%;
   }
@@ -184,7 +184,7 @@ a:hover {
   }
 
   .other_profile > h1 {
-    font-size: 40px;
+    font-size: 27px;
   }
 
   .non_menu_icons {
