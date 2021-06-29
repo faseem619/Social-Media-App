@@ -73,12 +73,12 @@ window.onload = () => {
   /////////////////////
   const dates = document.querySelectorAll(".date");
   const d1 = new Date();
-  const year = d1.getFullYear(),
-    month = d1.getMonth() + 1,
-    day = d1.getDate(),
-    hour = d1.getHours(),
-    minute = d1.getMinutes(),
-    second = d1.getSeconds();
+  const year = d1.getUTCFullYear(),
+    month = d1.getUTCMonth() + 1,
+    day = d1.getUTCDate(),
+    hour = d1.getUTCHours(),
+    minute = d1.getUTCMinutes(),
+    second = d1.getUTCSeconds();
   dates.forEach((element) => {
     const list1 = element.innerHTML.split("/");
     const [postDate, postMonth, rest] = list1;
@@ -104,7 +104,7 @@ window.onload = () => {
         minute - postMinute > 1 ? "s" : ""
       } ago`;
     else if (second != postSecond)
-      element.innerHTML = `${second - postSecond}s  ago`;
+      element.innerHTML = `${second - postSecond} s  ago`;
   });
 };
 
