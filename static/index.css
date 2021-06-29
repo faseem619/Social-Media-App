@@ -34,12 +34,16 @@ form > h3 {
   font-size: 2rem;
 }
 
+.navbar i{
+  scale: 2.5;
+}
+
 .comment {
   color: white;
   text-shadow: 0px 0px 2px black;
   padding: 10px 10px;
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
 }
 
@@ -112,16 +116,28 @@ body {
   .container {
     flex-direction: column-reverse;
   }
+
+  .comment{
+    font-size: 1.5rem;
+  }
+
+  .navbar i{
+    scale: 1.5;
+  }
+
+  .navbar h1{
+    font-size: 30px;
+  }
+
   .description {
     width: 95%;
     margin: 5% 1%;
     margin-top: 5%;
-    padding: 5% 1%;
-    padding-top: 0%;
+    padding: 7% 7%;
+ 
   }
-  /* h1 {
-    font-size: 60px;
-  } */
+  
+
   .navbar > .heading {
     font-size: 125%;
   }
@@ -132,7 +148,7 @@ body {
     padding: 1% 5%;
   }
   .description > h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   .description > p {
     font-size: 1.5rem;
@@ -149,10 +165,22 @@ body {
   .container {
     flex-direction: column-reverse;
   }
+  .description h2{
+    font-size: 2.5rem;
+  }
+  .navbar h1{
+    font-size: 3rem;
+  }
+  .comment{
+    font-size: 2rem;
+  }
+  .description > p {
+    font-size: 2rem;
+  }
   .description {
     width: 80%;
     margin: 5% 5%;
-    padding: 5% 5%;
+    padding: 7% 7%;
   }
   form {
     width: 80%;

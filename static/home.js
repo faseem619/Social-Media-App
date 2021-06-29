@@ -103,3 +103,8 @@ function orderPosts(e) {
     location.href = `${address[0]}/order?type=${type}`;
   }
 }
+
+
+if ( window.history.replaceState ) {
+  window.history.replaceState( null, null, window.location.href );
+}
