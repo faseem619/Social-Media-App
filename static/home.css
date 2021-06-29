@@ -63,6 +63,7 @@ body {
   word-wrap: break-word;
   padding-left: 20px;
   color: rgb(241, 237, 236);
+  margin-bottom: 10px;
 }
 
 .post_icons div {
@@ -92,6 +93,7 @@ body {
   font-weight: bolder;
   padding-left: 20px;
   color: rgb(193, 240, 240);
+  margin-bottom: 10px;
 }
 
 .likes:hover {
@@ -172,9 +174,7 @@ a:hover {
   z-index: 2;
 }
 
-
-
-@media (max-width: 812px) {
+@media (min-width: 360px) and (max-width: 812px) {
   .post_inner_container {
     width: 95%;
   }
@@ -184,7 +184,7 @@ a:hover {
   }
 
   .other_profile > h1 {
-    font-size: 27px;
+    font-size: 40px;
   }
 
   .non_menu_icons {
@@ -192,7 +192,7 @@ a:hover {
 
     display: none;
   }
-  
+
   .menu_active {
     transition: 1s;
 
@@ -200,7 +200,7 @@ a:hover {
     flex-direction: column;
     position: absolute;
     top: 115px;
-    right:-50px;
+    right: -50px;
     animation: ani 1s ease-in-out forwards;
     background-color: black;
     /* border: 1px solid white; */
@@ -208,19 +208,19 @@ a:hover {
     z-index: 2;
   }
 
-  @keyframes ani{
+  @keyframes ani {
     0% {
       right: -50px;
     }
-    100%{
+    100% {
       right: 30px;
     }
   }
-  @keyframes ani2{
+  @keyframes ani2 {
     0% {
       right: 30px;
     }
-    100%{
+    100% {
       right: -50px;
     }
   }
