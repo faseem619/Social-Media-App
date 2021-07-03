@@ -3,17 +3,17 @@ import sqlite3
 
 
 
-def addpost(name,content,date1):
+def addpost(name,content):
     con = sqlite3.connect("mydatabase.db")
     mycursor = con.cursor()
-    mycursor.execute("INSERT INTO posts(name,content,post_date) VALUES (?,?,?);",(name ,content,date1))
+    mycursor.execute("INSERT INTO posts(name,content,post_date) VALUES (?,?,datetime('now'));",(name ,content))
     con.commit()
     con.close()
 
 def getposts():
     con = sqlite3.connect("mydatabase.db")
     mycursor = con.cursor()
-    mycursor.execute("select * from posts order by date(post_date) desc")
+    mycursor.execute("select * from posts order by post_date desc")
     posts =mycursor.fetchall()
     con.commit()
     con.close()
@@ -31,7 +31,7 @@ def getprofile(name):
     con = sqlite3.connect("mydatabase.db")
     mycursor = con.cursor()
     ## stuff goes here
-    mycursor.execute(" SELECT * FROM posts WHERE name = ? order by date(post_date) desc",(name,))
+    mycursor.execute(" SELECT * FROM posts WHERE name = ? order by post_date desc",(name,))
     posts =mycursor.fetchall()
     con.commit()
     con.close()
@@ -41,13 +41,13 @@ def getposts_inorder(type):
     con = sqlite3.connect("mydatabase.db")
     mycursor = con.cursor()
     if type == 'New':
-        mycursor.execute("select * from posts order by date(post_date) desc")
+        mycursor.execute("select * from posts order by post_date desc")
         posts =mycursor.fetchall()
         con.commit()
         con.close()
         return posts
     if type == 'Old':
-        mycursor.execute("select * from posts order by date(post_date) asc")
+        mycursor.execute("select * from posts order by post_date asc")
         posts =mycursor.fetchall()
         con.commit()
         con.close()

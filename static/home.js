@@ -80,10 +80,10 @@ window.onload = () => {
     minute = d1.getUTCMinutes(),
     second = d1.getUTCSeconds();
   dates.forEach((element) => {
-    const list1 = element.innerHTML.split("/");
-    const [postDate, postMonth, rest] = list1;
+    const list1 = element.innerHTML.split("-");
+    const [postYear, postMonth, rest] = list1;
     const list2 = rest.split(" ");
-    const [postYear, rest2] = list2;
+    const [postDate, rest2] = list2;
     const list3 = rest2.split(":");
     const [postHour, postMinute, postSecond] = list3;
     if (year != postYear) element.innerHTML = `${year - postYear}years ago`;
@@ -103,8 +103,7 @@ window.onload = () => {
       element.innerHTML = `${minute - postMinute} min${
         minute - postMinute > 1 ? "s" : ""
       } ago`;
-    else if (second != postSecond)
-      element.innerHTML = `${second - postSecond} s  ago`;
+    else element.innerHTML = `${second - postSecond} s  ago`;
     element.style.display = "block";
   });
 };

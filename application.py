@@ -18,9 +18,8 @@ def home():
     name =request.form.get('name')
 
     content =request.form.get('content')
-    now = datetime.now()
-    dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
-    addpost(name=name,content=content,date1=dt_string)
+    
+    addpost(name=name,content=content)
    
     posts =getposts()
     return render_template('home.html',posts=posts,name=name)
