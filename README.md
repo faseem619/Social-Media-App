@@ -1,2 +1,5 @@
 # Social-Media-App
-This is a readme file
+Full stack Social Media App
+Frontend : Javascript
+Backend : Flask
+Database : SQLite
